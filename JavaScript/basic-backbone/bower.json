@@ -1,0 +1,23 @@
+{
+  "name": "basic-backbone",
+  "version": "0.0.0",
+  "authors": [
+    "timshullhedvig <timothy@hedviginc.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.localstorage": "~1.1.16",
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3",
+    "requirejs": "~2.1.18",
+    "text": "~2.0.14",
+    "backbone": "~1.2.1"
+  }
+}

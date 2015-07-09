@@ -1,0 +1,1 @@
+define(function(){"use strict";var n=function(){var n=document.body;n.innerHTML="<p>Hot damn!</p>",console.log("I did an action")}()});

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="requirejs">RequireJS</h1>
+
+<ul>
+<li><p>Purpose is to encourage modular code, referencing modules with module IDs, and asynchronous loading (loading scripts the fastest way possible without issues caused by load order)</p></li>
+<li><p>Uses the CommonJS practice of string IDs for dependencies. Clear declaration of dependencies and avoids the use of globals.</p></li>
+<li><p>IDs can be mapped to different paths.</p></li>
+<li><p>Encapsulates the module definition. Gives you the tools to avoid polluting the global namespace.</p></li>
+<li><p>Clear path to defining the module value. Either use &#8220;return value;&#8221; or the CommonJS &#8220;exports&#8221; idiom, which can be useful for circular dependencies.</p></li>
+</ul>
+
+<h3 id="itisanimprovementovercommonjsmodulesbecause:">It is an improvement over CommonJS modules because:</h3>
+
+<ul>
+<li>It works better in the browser, it has the least amount of gotchas. Other approaches have problems with debugging, cross-domain/CDN usage, file:// usage and the need for server-specific tooling.</li>
+<li>Defines a way to include multiple modules in one file. In CommonJS terms, the term for this is a &#8220;transport format&#8221;, and that group has not agreed on a transport format.</li>
+<li>Allows setting a function as the return value. This is really useful for constructor functions. In CommonJS this is more awkward, always having to set a property on the exports object. Node supports module.exports = function () {}, but that is not part of a CommonJS spec.</li>
+</ul>
+
+<h2 id="basics">Basics</h2>
+
+<ul>
+<li>Loads apps with a config file that generally sits in the top-level directory along with the application entry point.</li>
+<li>The data-main can explicitly set a base url, and it is generally best to set the baseUrl and paths config for felxibility.</li>
+<li>Occasion when this is not true - when file:
+
+<ul>
+<li>Ends in &#8220;.js&#8221;.</li>
+<li>Starts with a &#8220;/&#8221;.</li>
+<li>Contains an URL protocol, like &#8220;http:&#8221; or &#8220;https:&#8221;.</li>
+</ul></li>
+<li>Avoid deep nesting - simple structure follows the following:
+
+<ul>
+<li>www/
+
+<ul>
+<li>index.html</li>
+<li>js/
+
+<ul>
+<li>app/
+
+<ul>
+<li>sub.js</li>
+</ul></li>
+<li>lib/
+
+<ul>
+<li>jquery.js</li>
+<li>canvas.js</li>
+</ul></li>
+<li>app.js</li>
+<li>require.js</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>this structure assumes that app.js is the data-main and the application entry point (main function)</li>
+</ul>
+
+<h2 id="data-main">data-main</h2>
+
+<ul>
+<li>data-main is included in the html file and tells require which file is the entry point for script loading. This script sets configuration options and then loads the first application module. It, by default, has the html async attribute set to true.</li>
+<li>Can do inline require calls, but it is best to not set data-main in this case.</li>
+</ul>
+
+<h2 id="requirejsmodules">RequireJS modules</h2>
+
+<ul>
+<li>RequireJS modules extend the standard JS module pattern by not using globals to refer to other modules.</li>
+<li>The require pattern also allow multiple versions of one module to be loaded in a page.</li>
+</ul>
+
+<h2 id="basicrequirejsmodulepatterns">Basic RequireJS module patterns</h2>
+
+<ul>
+<li>With no dependencies, you can just pass an object literal to define
+
+<ul>
+<li>no deps - pass object literal to define, when require is called it is the same as returning an object literal froma function</li>
+<li>return object literal from function
+
+<ul>
+<li>Supports all aspects of privacy/object set up</li>
+<li>dependencies or no dependencies</li>
+</ul></li>
+<li>return function
+
+<ul>
+<li>same as object but provides either basic action to the assign</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="configoptions">config options</h2>
+
+<ul>
+<li>waitSeconds</li>
+<li>baseUrl - root path to use for all module loading (defaults to location of html page). RequireJS can load across domains.</li>
+<li>paths - this config property is used for path mappings that are not found directly under the base url. Assumed to be relative to base url. If the path starts with a &#8220;/&#8221; it references the top level directory possible. It is also possible to specify http.</li>
+<li>bundles - allows configuring multiple modules to be found in another script under one name</li>
+<li>pkgs</li>
+<li>shim - used to configure the dependencies, exports, and custom initialization for older, browser globals style scripts that do not use define to declare dependencies and set a module value. Shim config can also just be an array of dependencies. Only use other shimmed modules as dependencies for a shim config module (ie non AMD defined modules)
+
+<ul>
+<li>deps</li>
+<li>exports</li>
+<li>init - custom initialization scripts</li>
+</ul></li>
+<li>config - used to pass necessary configuration info to certain modules. Can then be accessed by adding the special dependency module and calling module.config()</li>
+<li>map - map certain module prefixes to other modules. Also provides support for * which maps the module for all loaded modules</li>
+<li>packages - used to load CommonJS packages</li>
+<li>nodeIdCompat - defaults to seeing app.js and app as two seprate modules. If set to true, it will see them as the same (good for npm)</li>
+<li>context - name the loaded context (good for multiversion support)</li>
+<li>deps - array of additional dependencies to load. Does not block require call, but loads asynchronously as soon as config block is processed.</li>
+<li>callback - function to execute after deps are processed</li>
+<li>enforceDefine</li>
+<li>xhtml</li>
+<li>urlArgs</li>
+<li>scriptType</li>
+<li>skipDataMain</li>
+</ul>
+
+<h2 id="requirefunction">require function</h2>
+
+<ul>
+<li>If the first argument is an array, then it will be treated as an array of dependency string names to fetch.</li>
+<li>An optional function callback can be specified to execute when all of those dependencies are available.</li>
+<li>require.createNode - creates either a script node (element) or an xhtml node with async set to true</li>
+</ul>
+
+<h2 id="definefunction">define function</h2>
+
+<ul>
+<li>The function that handles definitions of modules. Differs from require() in that a string for the module should be the first argument, and the function to execute after dependencies are loaded should return a value to define the module corresponding to the first argument&#8217;s name.</li>
+</ul>
+
+<h1 id="extranotes">Extra Notes</h1>
+
+<ul>
+<li>The require() function is used to run functions immediately</li>
+<li>The define() function is used to make modules available for use in multiple locations.</li>
+</ul>
+
+<h2 id="shimconfig">shim config</h2>
+
+<p>requirejs.config({
+ shim: {
+ &#8216;source1&#8217;: [&#8216;dependency1&#8217;,&#8216;dependency2&#8217;],
+ &#8216;source2&#8217;: [&#8216;source1&#8217;]
+ }
+});</p>
+
+<h2 id="usefulapisforconsole">Useful APIs for console</h2>
+
+<ul>
+<li>require.defined(moduleId) - returns true if your moduleId has been defined and is ready for use.</li>
+<li>require.specified(moduleId) - returns true if your moduleId has been listed as a dependency by another defined module. Note that the module may not be ready to use even if this returns true.</li>
+<li>requirejs.s.contexts._.config - This is technically a &#8220;back door/undocumented&#8221; call and it returns a an object with configuration info.</li>
+<li>toUrl - converts to a url</li>
+<li>undef - removes modules</li>
+</ul>
+
+<h2 id="requirejserrbacks">RequireJS &#8220;errbacks&#8221;</h2>
+
+<p>When you make a require call, you can include a third argument - a callback that receives an error argument, allowing you to react to the error, instead of ultimately generating an uncaught exception. The method signature, when using &#8220;errbacks&#8221; looks like this:</p>
+
+<pre><code>        require(
+            [ &quot;backbone&quot; ], 
+            function ( Backbone ) {
+                return Backbone.View.extend({ /* your magic here */ });
+            }, 
+            function (err) {
+                /* 
+                    err has err.requireType (timeout, nodefine, scripterror)
+                    and err.requireModules (an array of module Ids/paths)
+
+                    Inside here you could requirejs.undef('backbone') to clear
+                    the module from require locally - and you could even redefine
+                    it here or fetch it from a different location (though the
+                    fallback approach earlier takes care of this use-case more succinctly)
+                */
+            }
+        );
+</code></pre>
+
+<h2 id="requirejs.onerror">requirejs.onError</h2>
+
+<p>RequireJS has a global onError handler that will catch any errors not already handled by &#8220;errbacks&#8221;. To use it, simply set it like this:</p>
+
+<pre><code>        requirejs.onError = function (err) {
+            /* 
+                err has the same info as the errback callback:
+                err.requireType &amp; err.requireModules
+            */
+            console.log(err.requireType);
+            // Be sure to rethrow if you don't want to
+            // blindly swallow exceptions here!!!
+        };
+</code></pre>
+
+<h2 id="properties">Properties</h2>
+
+<ul>
+<li>The interactive test is used to know what script is currently running so that we get the right requirejs context and possibly a module name if the define call is anonymous.</li>
+</ul>
+
+<h2 id="manuallyscriptingaloadinconsole">Manually scripting a load in console</h2>
+
+<ul>
+<li>require.load(context, module, url)</li>
+<li>context is usually &#8220;__&#8221;. The loaded script module must be a named module. The url is not dependent on the baseUrl.</li>
+<li>must call require([moduleId]);</li>
+<li>the script is then available as var module = require(moduleId);</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+require.config({baseUrl:"scripts"}),require(["func"],function(){"use strict";console.log("main.js require function")});

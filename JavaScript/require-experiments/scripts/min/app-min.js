@@ -1,0 +1,1 @@
+define(["shirt"],function(i){"use strict";var t=i;window.myShirt=t});

@@ -1,0 +1,5 @@
+::1 - - [Sun, 07 Jun 2015 18:24:44 GMT] "GET / HTTP/1.1" 404 13 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2424.0 Safari/537.36"
+::1 - - [Sun, 07 Jun 2015 18:24:44 GMT] "GET /favicon.ico HTTP/1.1" 404 24 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2424.0 Safari/537.36"
+::1 - - [Sun, 07 Jun 2015 18:25:46 GMT] "GET /api/jimbo HTTP/1.1" 200 17 "-" "curl/7.37.1"
+::1 - - [Sun, 07 Jun 2015 18:27:22 GMT] "GET /api/jimbo HTTP/1.1" 500 1628 "-" "curl/7.37.1"
+::1 - - [Sun, 07 Jun 2015 18:29:30 GMT] "GET /api/jimbo HTTP/1.1" 200 17 "-" "curl/7.37.1"

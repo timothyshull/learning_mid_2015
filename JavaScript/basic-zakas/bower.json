@@ -1,0 +1,26 @@
+{
+  "name": "basic-zakas",
+  "version": "1.0.0",
+  "authors": [
+    "timothyshull <timothyshull@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "history.js": "~1.8.0",
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3",
+    "modernizr": "~2.8.3",
+    "requirejs": "~2.1.18",
+    "text": "~2.0.14",
+    "sockjs-client": "~1.0.0",
+    "normalize.css": "~3.0.3",
+    "underscore": "~1.8.3"
+  }
+}

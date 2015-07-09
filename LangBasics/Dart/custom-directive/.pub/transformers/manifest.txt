@@ -1,0 +1,2 @@
+1.10.0
+di/module_transformer,initialize,initialize/build/loader_replacer,smoke/src/default_transformer

@@ -1,0 +1,1 @@
+define(function(){"use strict";!function n(){return 3}()});

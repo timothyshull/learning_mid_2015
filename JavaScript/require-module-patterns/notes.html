@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<ol>
+<li>The Module Pattern
+
+<ul>
+<li>simple IIFE (no specific return - temporary action and state while avoiding global namespace issues)</li>
+<li>IIFE assigned to var (namespaced) (no specific return - value same as above)</li>
+<li>private vs public methods in namespaced IIFE (public defined after IIFE assignment to var)</li>
+<li>anonymous object literal return for IIFE (with public and private methods)</li>
+<li>Locally scoped object literal (object defined within namespaced IIFE and returned, private methods are just var assigned functions, public are methods on the object)</li>
+<li>Stacked locally scoped object literal (as above, but the public methods are defined within the object literal assignment)</li>
+<li>Revealing module pattern (return object literal with public methods defined above return and specifically assigned to new methods on object literal (good for facade pattern))</li>
+</ul></li>
+<li>Object literal notation
+
+<ul>
+<li>assigned to a var, essentially same as above when returning an object without being wrapped in a function, does not afford the same potential for privacy</li>
+</ul></li>
+<li>AMD modules
+
+<ul>
+<li>Allows all of the same potential as above but wraps everything in a define (and/or require)</li>
+<li>Simple object literal return</li>
+<li>simple function (IIFE might not be right to use in this situation)</li>
+<li>function returning object</li>
+<li>function returning function</li>
+</ul></li>
+<li><p>CommonJS modules</p></li>
+<li><p>ECMAScript Harmony modules</p></li>
+</ol>
+
+</body>
+</html>

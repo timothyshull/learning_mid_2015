@@ -1,0 +1,17 @@
+{
+  "name": "tims-b4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --harmony ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-logger": "0.0.3",
+    "q": "^1.4.1",
+    "request": "^2.57.0"
+  }
+}

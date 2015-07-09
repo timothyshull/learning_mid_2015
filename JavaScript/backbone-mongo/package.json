@@ -1,0 +1,28 @@
+{
+  "name": "backbone-mongo",
+  "version": "1.0.0",
+  "description": "Backbone and MongoDB sample app",
+  "main": "index.js",
+  "scripts": {
+    "start": "server-http.js",
+    "test": "karma start"
+  },
+  "author": "Tim Shull",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^2.3.0",
+    "grunt": "^0.4.5",
+    "mocha": "^2.2.5",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.4",
+    "restify": "^3.0.3"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jslint": "^1.1.14",
+    "grunt-mocha-test": "^0.12.7"
+  }
+}

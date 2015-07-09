@@ -1,0 +1,1 @@
+define(function(n){var r=n("a"),t=n("b"),i;return function(){return i={shirt1:r,shirt2:t}}});

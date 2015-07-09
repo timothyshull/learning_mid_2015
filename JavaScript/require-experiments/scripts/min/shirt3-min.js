@@ -1,0 +1,1 @@
+define(["./cart","./inventory"],function(e,n){return{color:"blue",size:"large",addToCart:function(){n.decrement(this),e.add(this)}}});

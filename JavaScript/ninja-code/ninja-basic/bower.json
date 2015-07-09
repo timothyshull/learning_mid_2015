@@ -1,0 +1,19 @@
+{
+  "name": "ninja-basic",
+  "version": "0.1.0",
+  "authors": [
+    "timothyshull <timothyshull@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "qunit": "~1.18.0"
+  }
+}

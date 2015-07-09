@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="simplemodulepattern">Simple Module Pattern</h1>
+
+<p>#
+ - Basic
+ (function () {
+ //code
+ }());</p>
+
+<h2 id="-notreallyvaluable">-not really valuable</h2>
+
+<pre><code>    - Basic - object return
+    (function () {
+        return {};
+    }());
+</code></pre>
+
+<h2 id="-notreallyvaluable">-not really valuable</h2>
+
+<pre><code>    - Basic - function return
+    (function () {
+        return function () {};
+    }());
+</code></pre>
+
+<p>#
+ - Namespaced
+ var Module = (function () {
+ //code
+ }());</p>
+
+<p>##
+ - Namespaced - object return
+ (function () {
+ return {};
+ }());</p>
+
+<p>###
+ - Namespaced method access
+ var Module = (function () {
+ return {
+ publicMethod: function () {
+ // code
+ }
+ };
+ })();</p>
+
+<p>###
+ var Module = (function () {
+ var privateMethod = function () {}; // can be FD, FE, or NFE
+ return {
+ publicMethod: function () {
+ // I can call <code>privateMethod()</code> you know&#8230;
+ },
+ };
+ })();</p>
+
+<p>##
+ - Namespaced - function return
+ (function () {
+ return function () {};
+ }());</p>
+
+<h1 id="functions">Functions</h1>
+
+<h2 id="declaration">declaration</h2>
+
+<p>function bar() {
+ return 3;
+}</p>
+
+<h2 id="anonymousfunctionexpression">anonymous function expression</h2>
+
+<p>var a = function() {
+ return 3;
+};</p>
+
+<h2 id="namedfunctionexpression">named function expression</h2>
+
+<p>var a = function bar() {
+ return 3;
+};</p>
+
+<h2 id="selfinvokingfunctionexpression">self invoking function expression</h2>
+
+<p>(function bar() {
+ return 3;
+})();</p>
+
+<h2 id="method">method</h2>
+
+<p>var foo = {
+ bar: function baz () {
+ return 3;
+ }
+};</p>
+
+<h2 id="constructor">constructor</h2>
+
+<p>function Foo () {
+ this.bar = 0;
+ this.baz = function () {
+ return 3;
+ };
+}
+var buzz = new Foo();</p>
+
+</body>
+</html>

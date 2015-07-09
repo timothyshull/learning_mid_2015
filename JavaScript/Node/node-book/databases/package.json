@@ -1,0 +1,12 @@
+{
+  "name": "book-tools",
+  "version": "0.1.0",
+  "description": "Tools for creating an ebook database",
+  "author": "Tim Shull <timothyshull@gmail.com> (http://www.timothyshulljr.com)",
+  "dependencies": {
+    "async": "^1.2.0",
+    "cheerio": "^0.19.0",
+    "file": "^0.2.2",
+    "request": "^2.57.0"
+  }
+}

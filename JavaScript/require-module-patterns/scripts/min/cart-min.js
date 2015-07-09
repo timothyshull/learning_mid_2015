@@ -1,0 +1,1 @@
+define(function(){"use strict";var n=[],t="badass cart";return{name:t,add:function e(t){n.push(t)},get:function r(){return n}}});

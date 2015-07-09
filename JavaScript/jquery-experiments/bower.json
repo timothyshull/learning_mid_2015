@@ -1,0 +1,23 @@
+{
+  "name": "jquery-experiments",
+  "version": "1.0.0",
+  "authors": [
+    "timothyshull <timothyshull@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.18",
+    "jquery": "~2.1.4",
+    "qunit": "~1.18.0",
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.3"
+  }
+}

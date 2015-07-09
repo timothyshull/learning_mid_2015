@@ -1,0 +1,23 @@
+#!/usr/bin/expect
+exp_internal 1
+spawn openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 31
+expect -re "(.*)\n"
+expect "Enter PEM pass phrase:*"
+send "ssss\r"
+expect "Verifying \- Enter PEM pass phrase:*"
+send "ssss\r"
+expect -re {.*Country Name \(2 letter code\) \[AU\]:*}
+send "US\r"
+expect -re {State or Province Name \(full name\) \[Some-State\]:*}
+send "CA\r"
+expect {Locality Name \(eg, city\) \[\]:*}
+send "Santa Cruz\r"
+expect {Organization Name \(eg, company\) \[Internet Widgits Pty Ltd\]:*}
+send "Hedvig\r"
+expect {Organizational Unit Name (eg, section) \[\]:*}
+send "Dev\r"
+expect {Common Name (e.g. server FQDN or YOUR name) \[\]:*}
+send "Deploy\r"
+expect {Email Address \[\]:*}
+send "hedvig@hedviginc\.com\r"
+sleep .2

@@ -1,0 +1,6 @@
+define (["scripts/b"],
+    function () {
+
+    }
+);
+

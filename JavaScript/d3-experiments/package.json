@@ -1,0 +1,26 @@
+{
+  "name": "d3-experiments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Shull",
+  "license": "ISC",
+  "volo": {
+    "dependencies": {
+      "esprima": "https://raw.github.com/jrburke/require-hm/latest/esprima.js",
+      "hm": "github:jrburke/require-hm/0.2.1",
+      "d3": "github:mbostock/d3/v3.5.5",
+      "html5-boilerplate": "github:h5bp/html5-boilerplate/5.2.0",
+      "Modernizr": "github:Modernizr/Modernizr/v2.8.3",
+      "hexbin": "https://raw.githubusercontent.com/d3/d3-plugins/master/hexbin/hexbin.js",
+      "hexbin-js": "github:indiemaps/hexbin-js/master"
+    }
+  },
+  "devDependencies": {
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10"
+  }
+}

@@ -1,0 +1,19 @@
+/*body, p, input {
+    font-family: fixed;
+    font-size: 13px;
+    border: none;
+}
+
+p {
+    white-space: pre;
+}
+
+p, form, input {
+    margin: 0;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}*/

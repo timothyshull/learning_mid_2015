@@ -1,0 +1,26 @@
+{
+  "name": "backbone-restify",
+  "version": "1.0.0",
+  "authors": [
+    "timothyshull <timothyshull@gmail.com>"
+  ],
+  "description": "An example Backbone app",
+  "main": "app/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.0",
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3",
+    "requirejs": "~2.1.18",
+    "modernizr": "~2.8.3",
+    "text": "~2.0.14",
+    "normalize.css": "~3.0.3"
+  }
+}

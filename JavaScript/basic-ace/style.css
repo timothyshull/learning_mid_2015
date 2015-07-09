@@ -1,0 +1,14 @@
+#editor {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+}
+
+.ace_gutter-active-line {
+    display: none !important;
+}
+
+.ace_gutter-layer::before {
+    content: "\003E" !important;
+    display: block;
+}

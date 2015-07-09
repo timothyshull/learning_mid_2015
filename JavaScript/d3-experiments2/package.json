@@ -1,0 +1,10 @@
+{
+  "volo": {
+    "dependencies": {
+      "d3": "github:mbostock/d3/v3.5.5",
+      "html5-boilerplate": "github:h5bp/html5-boilerplate/5.2.0",
+      "Modernizr": "github:Modernizr/Modernizr/v2.8.3",
+      "normalize.css": "github:necolas/normalize.css/3.0.3"
+    }
+  }
+}

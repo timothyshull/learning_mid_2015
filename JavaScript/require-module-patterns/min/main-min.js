@@ -1,0 +1,1 @@
+require.config({baseUrl:"scripts"}),require(["simple-iife-var"],function(){"use strict";console.log("main.js require function")});

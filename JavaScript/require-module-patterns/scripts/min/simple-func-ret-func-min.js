@@ -1,0 +1,1 @@
+define(["./old/cart","./old/inventory"],function(n,t){"use strict";return function(e){return e?window.title=e:t.storeName+" "+n.name}});
